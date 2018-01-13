@@ -49,6 +49,7 @@
                     </view>
                     <connections>
                         <outlet property="countLabel" destination="xUz-Mr-9zs" id="bKc-ij-fZL"/>
+                        <outlet property="imageView" destination="HI7-br-Vmd" id="kcD-7Y-ihI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -16,10 +16,18 @@ class ViewController: UIViewController {
     //カウントアップするラベル
     @IBOutlet weak var countLabel: UILabel!
     
+    //UIImageViewを紐付ける
+    @IBOutlet weak var imageView: UIImageView!
+    
+    //画像のインスタンスを作成
+    var nabeatsu1:UIImage! = UIImage(named:"1")
+    var nabeatsu2:UIImage! = UIImage(named:"2")
+    var nabeatsu3:UIImage! = UIImage(named:"3")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        //画像を表示させる
+        imageView.image = nabeatsu1
     }
 
     //ボタンを押したときの処理
