@@ -34,6 +34,14 @@ class ViewController: UIViewController {
     @IBAction func countUp(_ sender: Any) {
         count += 1
         countLabel.text = "count\(count)"
+        
+        if count % 3 == 0 {
+            imageView.image = nabeatsu3
+        } else if count % 3 == 1 {
+            imageView.image = nabeatsu1
+        } else {
+            imageView.image = nabeatsu2
+        }
     }
     
     
