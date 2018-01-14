@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //画像を表示させる
-        imageView.image = nabeatsu2
+        displayImg(img: nabeatsu2)
     }
 
     //ボタンを押したときの処理
@@ -45,22 +45,47 @@ class ViewController: UIViewController {
         if count % 3 == 0 || "\(count)".contains("3") {
             flag3 = true
         }
+        
+        //5の倍数　5の付く数字かどうかの判定
         if count % 5 == 0 || "\(count)".contains("5") {
             flag5 = true
         }
 
         if flag3 {
-            imageView.image = nabeatsu3
+            displayImg(img: nabeatsu3)
         } else if flag5 {
-            imageView.image = nabeatsu5
+            displayImg(img: nabeatsu5)
         } else if count % 3 == 1 {
-            imageView.image = nabeatsu1
+            displayImg(img: nabeatsu1)
         } else {
-            imageView.image = nabeatsu2
+            displayImg(img: nabeatsu2)
         }
     }
     
-    
+    //画像のサイズを取得して、適正な縮尺で表示させるメソッド
+    func displayImg(img:UIImage){
+        
+        //画面サイズを取得する
+        let screenWidth = self.view.bounds.width
+        let screenHeight = self.view.bounds.height
+
+        //画像のサイズを取得する
+        let imgWidth = img.size.width
+        let imgHeight = img.size.height
+
+        //画像が画面横幅7割になるよう縮尺を取得する
+        let scare = (screenWidth / imgWidth) * 0.7
+
+        //画像サイズを変更する
+        let rect = CGRect(x: 0, y: 0, width:  imgWidth * scare, height: imgHeight * scare)
+        imageView.frame = rect
+
+        //画像位置を変更する
+        imageView.center = CGPoint(x: screenWidth/2, y: screenHeight * 0.6)
+        
+        //画像を表示させる
+        imageView.image = img
+    }
     
     
     
